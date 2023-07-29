@@ -1,14 +1,22 @@
 import React from "react";
 
+import Card from "../UI/Card";
+import classes from "./AddUser.module.css";
+
 const AddUser = (promps) => {
+  const addUserHandler = (event) => {
+    event.preventDefault();
+  };
   return (
-    <form>
-      <leble htmlFor="username">Username</leble>
-      <import id="username" type="text"></import>
-      <leble htmlFor="age ">Age (Years)</leble>
-      <import id="age" type="number"></import>
-      <button type="submit">Add User</button>
-    </form>
+    <Card className={classes.input}>
+      <form onSubmit={addUserHandler}>
+        <leble htmlFor="username">Username</leble>
+        <input id="username" type="text"></input>
+        <leble htmlFor="age ">Age (Years)</leble>
+        <input id="age" type="number"></input>
+        <button type="submit">Add User</button>
+      </form>
+    </Card>
   );
 };
 
