@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import Card from "../UI/Card";
 import Button from "../UI/Button";
-import classes from "./AddUser.module.css";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
+import classes from "./AddUser.module.css";
 
 const AddUser = (promps) => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -44,7 +45,7 @@ const AddUser = (promps) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -71,7 +72,7 @@ const AddUser = (promps) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
